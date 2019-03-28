@@ -1,0 +1,29 @@
+FROM ubuntu:18.04
+LABEL maintainer="SPoket <lol8funny@gmail.com>"
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV DEBCONF_NONINTERACTIVE_SEEN true
+ENV DIR /document-src
+
+RUN mkdir $DIR
+RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections
+RUN apt update && \
+    apt install -y wget \
+        git \
+        make \
+        apt-transport-https \
+        unzip && \
+    apt install -y texlive-base \
+        texlive-latex-extra \
+        texlive-xetex \
+        texlive-lang-cyrillic \
+        texlive-fonts-extra \
+        texlive-science \
+        texlive-latex-recommended \
+        latexmk
+
+RUN apt install -y --reinstall ttf-mscorefonts-installer && \
+    fc-cache -f -v
+
+VOLUME $DIR
+WORKDIR $DIR
