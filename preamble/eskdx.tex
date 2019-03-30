@@ -1,0 +1,33 @@
+%%% Шрифт штампа обычный
+\renewcommand{\ESKDfontShape}{\upshape}
+
+%%% Заполнение штампа
+\ESKDtitle{}
+\ESKDdocName{\small Тема}
+\ESKDsignature{Код специальности}
+\ESKDauthor{Имя автора}
+\ESKDchecker{Имя проверяющего}
+\renewcommand{\ESKDcolumnXfIname}{Разраб.}
+\renewcommand{\ESKDcolumnXfIIname}{Провер.}
+\renewcommand{\ESKDcolumnXfIVname}{Реценз.}
+\renewcommand{\ESKDcolumnXfVname}{Н. Контр.}
+\renewcommand{\ESKDcolumnXfVIname}{Утверд.}
+\ESKDcolumnIX{Группа}
+\ESKDcolumnXIfIV{}
+\ESKDcolumnXIfV{}
+\ESKDcolumnXIfVI{}
+
+%%% Стиль рамки
+\ESKDthisStyle{formII}
+
+%%% Отключить все рамки
+%\usepackage[numberright]{eskdplain}
+
+%%% Настройки eskdx
+\ESKDsectStyle{section}{\normalsize } % Заголовки глав обычным жирным шрифтом по центру
+\ESKDsectStyle{subsection}{\normalsize } % Заголовки разделов обычным жирным шрифтом по центру
+\ESKDsectStyle{subsubsection}{\normalsize } % Заголовки подразделов обычным жирным шрифтом по центру
+\ESKDsectAlign{section}{Left} % Заголовки разделов слева
+\ESKDsectAlign{subsection}{Left} % Заголовки подразделов слева
+\ESKDsectSkip{section}{6mm}{6mm} % Отступ заголовков разделов
+\ESKDsectSkip{subsection}{6mm}{6mm} % Отступ заголовков разделов

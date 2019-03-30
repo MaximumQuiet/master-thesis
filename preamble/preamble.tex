@@ -1,0 +1,106 @@
+\documentclass[russian,14pt,simple, hpadding=10mm]{eskdtext}
+
+%%% Simple - убрать лишние рамки слева
+
+\usepackage{fontspec}
+\usepackage{xltxtra} % Верхние и нижние индексы
+\usepackage{xunicode} % Unicode для XeTeX
+
+\usepackage{xecyr} % Для работы eskdx
+
+% Шрифты, xelatex
+\defaultfontfeatures{Ligatures=TeX}
+\newfontfamily\cyrillicfont{Times New Roman}
+\setmainfont{Times New Roman} 
+\setmonofont{Liberation Sans}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+
+% Абзацы и списки
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{enumitem} 
+\setlist[itemize]{nolistsep,leftmargin=3.5em}
+
+%%% Мат. формулы
+\usepackage{mathtext}
+
+% Вставка изображений
+\usepackage{graphicx}
+\usepackage{xcolor}
+\graphicspath{{images/}}
+
+% Гиперссылки
+\usepackage{hyperref}
+\usepackage{url}
+
+% Таблицы
+\usepackage{tabularx}
+\usepackage{longtable}
+
+% Для работы eskdx
+\def\No{\textnumero}
+
+% Правильный формат подрисуночных надписей
+\addto\captionsrussian{\renewcommand{\figurename}{Рисунок}}
+
+%%% Переносы
+\exhyphenpenalty=10000
+\doublehyphendemerits=10000
+\finalhyphendemerits=5000
+\hyphenpenalty=1000
+
+\sloppy
+
+%%% Абзацный отступ 
+\parindent=12.5mm
+
+%%% Интервал 
+\linespread{1}
+
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{1em}{1em}}
+\makeatother
+
+%%% Раздел без цифр
+\newcommand{\anonsection}[1]{
+  \paragraph{\centerline{{#1}}}
+  \addcontentsline{toc}{section}{#1}
+
+}
+
+\newenvironment{itemize*}
+  {\begin{itemize}
+    \addtolength{\itemindent}{-0.65em}}
+  {\end{itemize}}
+
+\newcommand{\addimg}[3]{
+  \begin{figure}
+    \begin{center}
+      \includegraphics[scale=#2]{#1}
+    \end{center}
+    \caption{#3}
+  \end{figure}
+}
+
+\newcommand{\addimghere}[3]{
+  \begin{figure}[H]
+    \setlength\abovecaptionskip{10pt}
+    \setlength\belowcaptionskip{0pt}
+    \centerline{
+      \includegraphics[scale=#2]{#1}}
+    \caption{#3}
+  \end{figure}
+}
+
+\newcommand{\addtwoimghere}[4] {
+  \begin{figure}[H]
+    \begin{center}
+      \includegraphics[scale=#3]{#1}
+      \hfill
+      \includegraphics[scale=#3]{#2}
+    \end{center}
+    \caption{#4}
+  \end{figure}
+}
