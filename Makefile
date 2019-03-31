@@ -15,7 +15,11 @@ clean:
 	*.log \
 	*.out \
 	*.synctex.gz \
-    *.toc
+    *.toc \
+	bibliography* \
+	*.blg \
+	*.bbl \
+	*.pdf
 
 docker:
-	docker run --rm -ti -v ${PWD}:/document-src:Z docker-latex bash -c "make build && make clean"
+	docker run --rm -ti -v ${PWD}:/document-src:Z spoket/docker-latex bash -c "make build && make clean"
