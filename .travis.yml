@@ -1,0 +1,20 @@
+language: generic
+
+branches:
+        only:
+                - master
+
+services:
+  - docker
+
+script:
+  - make docker
+
+deploy:
+  provider: releases
+  api_key: $TOKEN
+  file:
+    - "thesis.pdf"
+  name: Документ от $(date +'%d.%m.%Y %R')
+
+skip-cleanup: true
