@@ -20,8 +20,10 @@
 % Абзацы и списки
 \usepackage{indentfirst}
 \usepackage{float}
-\usepackage{enumitem} 
-\setlist[itemize]{nolistsep,leftmargin=3.5em}
+\usepackage{enumerate} 
+
+\usepackage{enumitem}
+\setlist[enumerate,itemize]{nolistsep,leftmargin=4.2em}
 
 %%% Мат. формулы
 \usepackage{mathtext}
@@ -61,13 +63,15 @@
 
 \makeatletter
 \renewcommand*\l@section{\@dottedtocline{1}{1em}{1em}}
+\def\redeflsection{\def\l@section{\@dottedtocline{1}{0em}{10em}}}
 \makeatother
 
 %%% Раздел без цифр
 \newcommand{\anonsection}[1]{
-  \paragraph{\centerline{{#1}}}
+  \ESKDsectAlign{section}{Center}
+  \section*{{{#1}}}
+  \ESKDsectAlign{section}{Left}
   \addcontentsline{toc}{section}{#1}
-
 }
 
 \newenvironment{itemize*}
