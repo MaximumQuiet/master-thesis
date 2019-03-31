@@ -1,6 +1,7 @@
 Master thesis
 =============
 
+[![Build Status](https://travis-ci.com/SPoket/master-thesis.svg?branch=master)](https://travis-ci.com/SPoket/master-thesis)<Paste>
 [![Лицензия на произведения](https://img.shields.io/badge/license-CC_BY--SA_4.0-blue.svg)](https://creativecommons.org/licenses/by-sa/4.0/deed.ru)
 
 Выпускная работа студента техникума по специальности 09.02.01, оформленная в LaTeX. В работе рассматривается разработка СКУД на основе распознавания лиц.
