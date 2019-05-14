@@ -27,6 +27,11 @@ Arch:
 sudo pacman -S texlive-base texlive-latex-extra texlive-xetex texlive-lang-cyrillic latexmk texlive-fonts-extra texlive-math-extra latex-beamer ttf-ms-fonts && fc-cache -f -v
 ```
 
+macOS:
+```
+brew cask install mactex-no-gui
+```
+
 Компиляция проекта
 ------------------
 С помощью Makefile:
