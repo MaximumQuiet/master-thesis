@@ -1,0 +1,99 @@
+\documentclass[crop,tikz]{standalone}
+
+\usepackage{fontspec}
+\setmainfont{Courier New}
+
+\usepackage{polyglossia}
+\setdefaultlanguage[spelling=modern]{russian}
+\newfontfamily{\cyrillicfont}{Courier New}
+\newfontfamily{\cyrillicfontsf}{Courier New}
+\newfontfamily{\cyrillicfonttt}{Courier New}
+
+\usetikzlibrary{calc,arrows.meta}
+
+\definecolor{darkgray}{RGB}{85,85,85}
+
+\newcounter{treeline}
+
+\newcommand{\treeroot}[1]{ % Title
+  \node[above] at (0,1) {\texttt{#1}};
+
+  \setcounter{treeline}{0}
+}
+
+\newcommand{\treeentry}[2]{ % Title, Level
+  \draw[thick]
+    (#2 - 1, -\value{treeline} * 2 + 1) --
+    (#2 - 1, -\value{treeline} - \value{treeline} - 1) --
+    (#2 + 1, -\value{treeline} - \value{treeline} - 1) node[right] {\texttt{#1}};
+
+  \node at (#2 + 1, -\value{treeline} - \value{treeline} - 1) [yshift=-3pt] {\textbullet};
+
+  \foreach \x in {1,...,#2}
+  {
+    \draw[thick]
+      (\x - 1, -\value{treeline} * 2 + 1) --
+      (\x - 1, -\value{treeline} - \value{treeline} - 1);
+  }
+
+  \stepcounter{treeline}
+}
+
+\newcommand{\treeentrycommented}[4]{ % Title, Level, Dummy node, Comment
+  \draw[thick]
+    (#2 - 1, -\value{treeline} * 2 + 1) --
+    (#2 - 1, -\value{treeline} - \value{treeline} - 1) --
+    (#2 + 1, -\value{treeline} - \value{treeline} - 1) node[right] (#3) {\texttt{#1}};
+
+  \node at (#2 + 1, -\value{treeline} - \value{treeline} - 1) [yshift=-3pt] {\textbullet};
+  
+  \draw[
+    gray,
+    line width=3pt, line cap=round, dash pattern=on 0pt off 10pt
+  ] (#3) -- (20, -\value{treeline} - \value{treeline} - 1) node[darkgray,right] {#4};
+
+  \foreach \x in {1,...,#2}
+  {
+    \draw[thick]
+      (\x - 1, -\value{treeline} * 2 + 1) --
+      (\x - 1, -\value{treeline} - \value{treeline} - 1);
+  }
+  
+  \stepcounter{treeline}
+}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \fontsize{30}{36}\selectfont
+  
+  \treeroot{\textbf{smartcamera/}}
+    \treeentry{\_\_init\_\_.py}{1}
+    \treeentrycommented{\_\_main\_\_.py}{1}{main}{Точка входа}
+    \treeentry{\textbf{assets/}}{1}
+    \treeentrycommented{haarcascade.xml}{2}{assets}{Классификатор лиц}
+    \treeentrycommented{\textbf{database/}}{1}{database}{Директория для
+    хранения баз данных}
+      \treeentry{encodings.pickle}{2}
+      \treeentry{states.pickle}{2}
+    \treeentrycommented{\textbf{dataset/}}{1}{dataset}{Изображения для обучения распознаванию}
+    \treeentrycommented{\textbf{image-processing}}{1}{image-processing}{Модуль
+    обнаружения/распознавания лиц}
+      \treeentry{\_\_init\_\_.py}{2}
+      \treeentry{detect\_face.py}{2}
+      \treeentry{encode\_face.py}{2}
+      \treeentry{recognition.py}{2}
+    \treeentrycommented{\textbf{telegram/}}{1}{telegram}{Модуль Telegram-bot}
+        \treeentry{\_\_init\_\_.py}{2}
+        \treeentry{telegram\_bot.py}{2}
+        \treeentry{states\_worker.py}{2}
+        \treeentry{response\_storage.py}{2}
+        \treeentry{send\_file.py}{2}
+        \treeentry{utils.py}{2}
+    \treeentrycommented{setup.py}{1}{setup}{Конфигурационный файл
+    Python проекта}
+    \treeentrycommented{config.py}{1}{config}{Файл настроек Python
+    проекта}
+\end{tikzpicture}
+
+\end{document}
