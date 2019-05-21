@@ -25,4 +25,19 @@
 о том, найдено лицо на фото или нет. В этом заключается метод Виолы-Джонса,
 который успешно используется в сфере компьютерного зрения.
 
-%% TODO: Viola-Jones implementation in OpenCV
+Библиотека распознавания OpenCV имеет свою имплементацию алгоритма
+Виолы-Джонса, использование заключается в написании следующего кода:
+
+\lstset{language=Python, basicstyle=\normalsize, numbers=left, breaklines=true,
+frame=single, showstringspaces=false, columns=fullflexible} 
+\begin{lstlisting}
+import cv2 as cv
+
+face_cascade = cv.CascadeClassifier('haarcascade.xml')
+faces = face_cascade.detectMultiScale(#COLOR, 3, 5)
+\end{lstlisting}
+
+Создание класса \textit{CascadeClassifier} происходит на основе файла с шаблонами
+(примитивами) в формате XML. Данный класс содержит функцию
+\textit{detectMultiScale()}, результат которой -- координаты лиц на
+изображении.
