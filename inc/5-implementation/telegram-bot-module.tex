@@ -78,3 +78,23 @@ keyboard.row(InlineKeyboardButton(TEXT, COMMAND))
 # Отправка сообщения с меню - кнопка COMMAND
 bot.send_message(CHAT_ID, RESPONSE, reply_markup=keyboard)
 \end{lstlisting}
+
+\subsubsection{Построение диалога с пользователем}
+
+Некоторые операции управления СКУД требуют больше одного сообщения от
+пользователя, а также нуждаются в уже полученных данных. Для решения проблемы
+бот был разработан на основе конечного автомата с использованием состоний. 
+
+При каждой команде, бот переходит в определенное состояние, и запрашивает новые
+данные. В конце графа каждого состояния бот сбрасывет его на начальное. В ходе
+разработки Telegram-бот был реализован с использованием конечного автомата
+(Рис. 28).
+
+
+\begin{figure}[h!]
+  \centering
+  \setlength{\fboxsep}{5pt}
+  \includegraphics[width=1\textwidth]{data-visualisation/state-machine}
+  \vspace*{6pt}
+  \caption{Конечный автомат}\label{fig:state-machine}
+\end{figure}
