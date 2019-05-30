@@ -60,3 +60,21 @@ bot.send_message(CHAT_ID, RESPONSE)
 # Отправка изображения
 bot.send_photo(CHAT_ID, photo)
 \end{lstlisting}
+
+\subsubsection{Построение пользовательских меню} 
+
+Управление ботом текстовыми командами неудобно для пользователя по причине
+долгого набирания команд, а также необходимости запоминания этих команд. Для
+избежания такого рода проблем были использованы встроенные в Telegram
+пользовательские меню. Подобный инструмент позволяет строить меню из кнопок,
+а по нажатию кнопки отправлять команду:
+
+\begin{lstlisting}
+from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+keyboard = InlineKeyboardMarkup() 
+keyboard.row(InlineKeyboardButton(TEXT, COMMAND))
+
+# Отправка сообщения с меню - кнопка COMMAND
+bot.send_message(CHAT_ID, RESPONSE, reply_markup=keyboard)
+\end{lstlisting}
