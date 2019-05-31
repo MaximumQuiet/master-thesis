@@ -5,7 +5,6 @@
 \usepackage{fontspec}
 \usepackage{xltxtra} % Верхние и нижние индексы
 \usepackage{xunicode} % Unicode для XeTeX
-
 \usepackage{xecyr} % Для работы eskdx
 
 % Шрифты, xelatex
@@ -42,6 +41,20 @@
 % Таблицы
 \usepackage{tabularx}
 \usepackage{longtable}
+
+\usepackage{listings} % Оформление исходного кода
+\lstset{
+    language=Python,
+    basicstyle=\footnotesize, % Размер и тип шрифта
+    showstringspaces=true, 
+    keepspaces=true,
+    columns=fullflexible,
+    breaklines=true,            % Перенос строк
+    tabsize=2,                  % Размер табуляции
+    frame=single,               % Рамка
+    literate={--}{{-{}-}}2,     % Корректно отображать двойной дефис
+    literate={---}{{-{}-{}-}}3  % Корректно отображать тройной дефис
+  }
 
 % Для работы eskdx
 \def\No{\textnumero}
@@ -110,3 +123,5 @@
     \caption{#4}
   \end{figure}
 }
+
+\newcommand{\uscript}[1]{$_{\text{#1}}$}

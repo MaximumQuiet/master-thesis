@@ -1,0 +1,76 @@
+\section{Экономическая часть}
+
+Рассчитаем общую стоимость разработки проекта по формуле \ref{cost}:
+
+\begin{equation}\label{cost}
+\textup{З} = \textup{З}_\textup{к} + \textup{З}_\textup{зп},
+\end{equation}
+
+где З -- единовременные затраты, руб.,
+З\uscript{к} -- затраты на комплектующие, руб., 
+З\uscript{зп} -- затраты на заработную плату исполнителей, руб. 
+
+Для сборки системы контроля и управления доступом потребовались комплектующие,
+расчёт затрат представлен в таблице \ref{acessories-cost}:
+
+\begin{table}[H]
+  \caption{Комплектующие системы контроля и управления доступом}\label{acessories-cost}
+  \centering
+  \begin{tabular}{| >{\centering}p{0.5cm} | >{\centering}p{10cm}
+  | >{\centering}p{1.4cm} | >{\centering}p{3cm} |}
+  \hline № & Наименование & Кол-во, шт. & Цена, руб.
+  \tabularnewline
+  \hline 1 & Мини-компьютер Raspberry Pi 3B & 1 & 2284 
+  \tabularnewline
+  \hline 2 & Камера Raspberry Camera Board & 1 & 850 
+  \tabularnewline
+  \hline 3 & SD-карта Microdata 8 Гб & 1 & 160 
+  \tabularnewline
+  \hline 4 & Корпуc Aokin & 1 & 150 
+  \tabularnewline
+  \hline 5 & Зарядное устройство Smartbuy SBP-6000 & 1 & 150 
+  \tabularnewline
+  \hline & Итого & 5 & 3594 
+  \tabularnewline
+  \hline 
+  \end{tabular}
+\end{table}
+
+Таким образом, затраты на комплектющие системы составляют 3594,00 рублей. Для
+определения полной стоимости СКУД в таблице \ref{employees-cost} был провёден расчёт заработной платы
+исполнителя:
+
+\begin{table}[H]
+  \caption{Исполнители проекта}\label{employees-cost}
+  \begin{tabular}{| >{\centering}p{5cm} | >{\centering}p{3.3cm}
+  | >{\centering}p{3.3cm} | >{\centering}p{3.3cm} |}
+  \hline Исполнитель & Трудоёмкость, дней & Дневная ставка, руб. & Зарплата, руб. 
+  \tabularnewline
+  \hline Инженер-программист & 26 & 900 & 23400 
+  \tabularnewline
+  \hline 
+  \end{tabular}
+\end{table}
+
+Общая смета на разработку системы контроля и управления доступом представлена
+в таблице \ref{counts}:
+
+\begin{table}[H]
+  \caption{Смета на разработку проекта}\label{counts}
+  \begin{tabular}{| >{\centering}p{7.4cm} | >{\centering}p{7.4cm} |}
+  \hline Статья затрат & Сумма, руб. 
+  \tabularnewline
+  \hline Комплектующие & 3594 
+  \tabularnewline
+  \hline Заработная плата & 23400 
+  \tabularnewline
+  \hline Итого & 26994 
+  \tabularnewline
+  \hline 
+  \end{tabular}
+\end{table}
+
+Итоговая стомость системы контроля и управления доступом составляет 26994,00
+рубля. Из расчитанной стоимости можно был сделан вывод, что проект выполняет
+одну из своих главных целей -- обладает приемлемой стоимостью для индивидульных
+предпринимателей, имеющих небольшие помещения, нуждающиеся в контроле доступа.
