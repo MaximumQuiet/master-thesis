@@ -1,7 +1,7 @@
 all: build run
 
 build:
-	latexmk -xelatex -synctex=1 -jobname=thesis main.tex
+	latexmk -xelatex -synctex=1 -bibtex -jobname=thesis main.tex
 
 run:
 	zathura thesis.pdf

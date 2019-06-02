@@ -1,0 +1,113 @@
+\begin{thebibliography}{10}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{access_control}
+\selectlanguageifdefined{russian}
+Система контроля и управления доступом
+  [Электронный ресурс]~// Википедия.
+\newblock 2019. -- URL:~\url{https://wikipedia.org/wiki/Access_control.html}
+  \BibAnnote{дата обращения: 04.04.2019}.
+
+\bibitem{access_control_history}
+\selectlanguageifdefined{russian}
+Контроллеры СКУД: история развития
+  [Электронный ресурс]~// Официальный
+  интернет-магазин компании ООО «Доктор
+  Дорс».
+\newblock 2019. --
+  URL:~\url{http://www.drdoors-msc.ru/kontrollery_skud_istoriya_razvitiya.html}
+  \BibAnnote{дата обращения: 02.06.2019}.
+
+\bibitem{sigur}
+\selectlanguageifdefined{russian}
+Комплексная система Sigur [Электронный
+  ресурс]~// Официальный сайт компании Sigur.
+\newblock 2019. -- URL:~\url{http://sigursys.com/controllers.php}
+  \BibAnnote{дата обращения: 16.04.2019}.
+
+\bibitem{smartec}
+\selectlanguageifdefined{russian}
+Smartec ST-FR040EM [Электронный ресурс]~//
+  Официальный сайт компании Smartec.
+\newblock 2019. --
+  URL:~\url{https://www.smartec-security.com/products/Biometrics/STFR040EM/}
+  \BibAnnote{дата обращения: 16.04.2019}.
+
+\bibitem{pi-hardware}
+\selectlanguageifdefined{russian}
+Rasberry Pi Hardware[Электронный ресурс]~//
+  Официальный сайт компании Raspberry Pi Foundations.
+\newblock 2019. --
+  URL:~\url{https://www.raspberrypi.org/documentation/hardware/raspberrypi/README.md}
+  \BibAnnote{дата обращения: 18.04.2019}.
+
+\bibitem{picamera}
+\selectlanguageifdefined{russian}
+PiCamera Documentation [Электронный ресурс]~//
+  Официальная документация Python-библиотеки
+  picamera.
+\newblock 2019. -- URL:~\url{https://picamera.readthedocs.io/en/release-1.13/}
+  \BibAnnote{дата обращения: 02.06.2019}.
+
+\bibitem{opencv}
+\selectlanguageifdefined{russian}
+OpenCV Python Documentation [Электронный ресурс]~//
+  Официальная документация Python-библиотеки
+  OpenCV.
+\newblock 2019. --
+  URL:~\url{https://opencv-python-tutroals.readthedocs.io/en/latest/}
+  \BibAnnote{дата обращения: 02.06.2019}.
+
+\bibitem{dlib}
+\selectlanguageifdefined{russian}
+dlib [Электронный ресурс]~// Официальный
+  репозиторий библиотеки dlib.
+\newblock 2019. -- URL:~\url{https://github.com/davisking/dlib}
+  \BibAnnote{дата обращения: 02.06.2019}.
+
+\bibitem{telebot}
+\selectlanguageifdefined{russian}
+pyTelegramBotAPI [Электронный ресурс]~//
+  Официальный репозиторий библиотеки
+  pyTelegramBotAPI.
+\newblock 2019. -- URL:~\url{https://github.com/eternnoir/pyTelegramBotAPI}
+  \BibAnnote{дата обращения: 03.05.2019}.
+
+\bibitem{pi-os}
+\selectlanguageifdefined{russian}
+Сравнение операционных систем для Raspberry Pi
+  [Электронный ресурс]~// Образовательный
+  сайт ArduinoMaster.
+\newblock 2019. --
+  URL:~\url{https://arduinomaster.ru/raspberry-pi/operatsionnye-sistemy-raspberry-pi/}
+  \BibAnnote{дата обращения: 02.06.2019}.
+
+\bibitem{recognition}
+\selectlanguageifdefined{russian}
+Распознаём лица на фото с помощью Pyhton и OpenCV
+  [Электронный ресурс]~// Habrahabr.
+\newblock 2019. -- URL:~\url{https://habr.com/ru/post/301096/}
+  \BibAnnote{дата обращения: 17.05.2019}.
+
+\bibitem{pickle}
+\selectlanguageifdefined{russian}
+Python Object Serialization [Электронный ресурс]~//
+  Официальная документация языка
+  программирования Python.
+\newblock 2019. -- URL:~\url{https://docs.python.org/3/library/pickle.html}
+  \BibAnnote{дата обращения: 03.05.2019}.
+
+\bibitem{finite-state-machine}
+\selectlanguageifdefined{russian}
+Конечный автомат [Электронный ресурс]~//
+  Wikipedia.
+\newblock 2019. -- URL:~\url{https://wikipedia.org/Finite-state_machine.html}
+  \BibAnnote{дата обращения: 02.06.2019}.
+
+\end{thebibliography}

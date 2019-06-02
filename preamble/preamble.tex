@@ -9,9 +9,10 @@
 
 % Шрифты, xelatex
 \defaultfontfeatures{Ligatures=TeX}
-\newfontfamily\cyrillicfont{Times New Roman}
-\setmainfont{Times New Roman} 
-\setmonofont{Courier}
+\setmainfont{Times New Roman}
+  \newfontfamily{\cyrillicfont}{Times New Roman}
+\setmonofont{Courier New}
+  \newfontfamily{\cyrillicfonttt}{Courier New}
 
 \usepackage{polyglossia}
 \setdefaultlanguage{russian}
@@ -45,7 +46,7 @@
 \usepackage{listings} % Оформление исходного кода
 \lstset{
     language=Python,
-    basicstyle=\footnotesize, % Размер и тип шрифта
+    basicstyle=\ttfamily\footnotesize, % Размер и тип шрифта
     showstringspaces=true, 
     keepspaces=true,
     columns=fullflexible,
