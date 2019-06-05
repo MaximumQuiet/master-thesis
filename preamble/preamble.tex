@@ -23,7 +23,7 @@
 \usepackage{enumerate} 
 
 \usepackage{enumitem}
-\setlist[enumerate,itemize]{itemindent=0.65em,leftmargin=3.6em}
+\setlist[enumerate,itemize]{nolistsep, itemsep=0cm, parsep=0pt, itemindent=0.65em,leftmargin=3.6em}
 
 \usepackage{listings}
 
@@ -44,18 +44,42 @@
 \usepackage{longtable}
 
 \usepackage{listings} % Оформление исходного кода
+%\lstset{
+%    language=Python,
+%    basicstyle=\ttfamily\footnotesize, % Размер и тип шрифта
+%    showstringspaces=true, 
+%    keepspaces=true,
+%    columns=fullflexible,
+%    breaklines=true,            % Перенос строк
+%    tabsize=2,                  % Размер табуляции
+%    frame=single,               % Рамка
+ %   literate={--}{{-{}-}}2,     % Корректно отображать двойной дефис
+ %   literate={---}{{-{}-{}-}}3  % Корректно отображать тройной дефис
+ 
+
 \lstset{
-    language=Python,
-    basicstyle=\ttfamily\footnotesize, % Размер и тип шрифта
-    showstringspaces=true, 
-    keepspaces=true,
-    columns=fullflexible,
-    breaklines=true,            % Перенос строк
-    tabsize=2,                  % Размер табуляции
-    frame=single,               % Рамка
-    literate={--}{{-{}-}}2,     % Корректно отображать двойной дефис
-    literate={---}{{-{}-{}-}}3  % Корректно отображать тройной дефис
-  }
+language=R,
+basicstyle=\scriptsize\ttfamily,
+commentstyle=\ttfamily\color{gray},
+numbers=left,
+numberstyle=\ttfamily\color{gray}\footnotesize,
+stepnumber=1,
+numbersep=5pt,
+backgroundcolor=\color{white},
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+frame=single,
+tabsize=2,
+captionpos=b,
+breaklines=true,
+breakatwhitespace=false,
+title=\lstname,
+escapeinside={},
+keywordstyle={},
+morekeywords={}
+}
+
 
 % Для работы eskdx
 \def\No{\textnumero}
@@ -89,6 +113,7 @@
   \ESKDsectAlign{section}{Left}
   \addcontentsline{toc}{section}{#1}
 }
+
 
 \newenvironment{itemize*}
   {\begin{itemize}
