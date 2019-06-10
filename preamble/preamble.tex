@@ -1,4 +1,4 @@
-\documentclass[russian,14pt,simple, hpadding=10mm]{eskdtext}
+\documentclass[russian,14pt,simple, hpadding=5mm]{eskdtext}
 
 %%% Simple - убрать лишние рамки слева
 
@@ -43,6 +43,17 @@
 \usepackage{tabularx}
 \usepackage{longtable}
 
+% Заголовки без точек
+\AtBeginDocument{% устанавливаем переопределение через это
+  \def\@aftersepkern{\hspace{0.5em}}%
+  \def\postchapter{\@aftersepkern}%
+  \def\postsection{\@aftersepkern}%
+  \def\postsubsection{\@aftersepkern}%
+  \def\postsubsubsection{\@aftersepkern}%
+  \def\postparagraph{\@aftersepkern}%
+  \def\postsubparagraph{\@aftersepkern}%
+}
+
 \usepackage{listings} % Оформление исходного кода
 %\lstset{
 %    language=Python,
@@ -56,14 +67,15 @@
  %   literate={--}{{-{}-}}2,     % Корректно отображать двойной дефис
  %   literate={---}{{-{}-{}-}}3  % Корректно отображать тройной дефис
  
-
 \lstset{
-language=R,
-basicstyle=\scriptsize\ttfamily,
+language=Python,
+basicstyle=\ttfamily\footnotesize,
 commentstyle=\ttfamily\color{gray},
 numbers=left,
 numberstyle=\ttfamily\color{gray}\footnotesize,
 stepnumber=1,
+keepspaces=true,
+columns=fullflexible,
 numbersep=5pt,
 backgroundcolor=\color{white},
 showspaces=false,
@@ -77,7 +89,9 @@ breakatwhitespace=false,
 title=\lstname,
 escapeinside={},
 keywordstyle={},
-morekeywords={}
+morekeywords={},
+belowskip=-20pt,
+xleftmargin=0.8cm
 }
 
 
@@ -113,7 +127,6 @@ morekeywords={}
   \ESKDsectAlign{section}{Left}
   \addcontentsline{toc}{section}{#1}
 }
-
 
 \newenvironment{itemize*}
   {\begin{itemize}

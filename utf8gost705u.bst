@@ -1034,7 +1034,7 @@ FUNCTION {format.annoteurl}       %%%%%%%% правлено
 { annote empty$ url empty$ or
     { "" }
 { after.sentence 'output.state :=
-  "-- URL:" "~" * url * " " * "\BibAnnote{" * annote * "}" * %% изменён Режим доступа на URL
+  "" "" * url * "" * %"\BibAnnote{" * annote * "}" * %% изменён Режим доступа на URL
 }
   if$
 }
@@ -1268,20 +1268,22 @@ FUNCTION {mastersthesis}
 }
 
 FUNCTION {electronic}
-{ output.bibitem
-  format.authors output
-  title howpublished new.sentence.checkb
-  format.btitle output
-  howpublished new.block.checka
-  howpublished 
-  new.dblslash output
-  new.block
-  format.date output
-  new.block
-  note output
-  new.sentence
-  format.annoteurl output                   %%%%%%% правлено
-  fin.entry
+{ 
+output.bibitem
+format.annoteurl output
+new.sentence
+format.authors output
+title howpublished new.sentence.checkb
+format.btitle output
+howpublished new.block.checka
+howpublished
+new.dblslash output
+new.block
+annote output
+%format.date output
+%new.block
+%note output
+fin.entry
 }
 
 FUNCTION {misc}
