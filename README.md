@@ -28,8 +28,13 @@ sudo pacman -S texlive-base texlive-latex-extra texlive-xetex texlive-lang-cyril
 ```
 
 macOS:
-```
+```bash
 brew cask install mactex-no-gui
+```
+
+Docker:
+```bash
+docker pull spoket/docker-latex
 ```
 
 Компиляция проекта

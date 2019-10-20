@@ -19,7 +19,8 @@ clean:
 	bibliography* \
 	*.blg \
 	*.bbl \
-	*.pdf
+	*.pdf \
+	*.xdv
 
 docker:
 	docker run --rm -ti -v ${PWD}:/document-src:Z spoket/docker-latex bash -c "make build"
